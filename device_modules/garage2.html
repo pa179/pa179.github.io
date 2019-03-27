@@ -1,0 +1,114 @@
+<div class="device_section">
+	<div class="section_header">
+		<a class="device_title" field="customName">Garage</a>
+	</div>
+	<div class="section_main" id="garage_interface">				
+		<div id="garage_container">
+			<img class="garage_icon tor1" state="fehler" id="tor1" src="img/transparent.png" />
+			<img class="garage_icon tor2" state="fehler" id="tor2" src="img/transparent.png" />
+		</div>
+		<div>
+			<img class="garage_button button garageOpen1" src="img/transparent.png"/>
+			<img class="garage_button button garageOpen2" src="img/transparent.png"/>
+		</div>
+
+		<!--Invisible Attribute fields-->
+		<a class="g_attribute g_open1" field="open1"></a>
+		<a class="g_attribute g_close1" field="close1"></a>
+		<a class="g_attribute g_open2" field="open2"></a>
+		<a class="g_attribute g_close2" field="close2"></a>
+	</div>
+	<div class="section_footer">
+		<div class="section_footer_value"><a field="lastAnswer" class="time">-</a></div>
+		<div class="section_footer_value"><a field="ip" class="ipField">---.---.---.--</a></div>
+	</div>
+	
+	<style>
+		#garage_interface {
+			display: block;
+			text-align: -webkit-center;
+		}
+		#garage_container {
+			display: inline-block;
+			font-size: 0;
+		}
+		.garage_icon {
+			width: 70px;
+			height: 70px;
+			vertical-align: middle;
+			display: inline-block;
+			
+			background-image: url(img/tor_sprite.png);
+			background-position: 100% 0%;
+			background-size: cover;
+		}
+		.garage_icon[state="zu"] {
+			background-position: 0% 0%;
+		}
+		.garage_icon[state="teil"] {
+			background-position: 33.333% 0%;
+		}
+		.garage_icon[state="auf"] {
+			background-position: 66.666% 0%;
+		}
+		.garage_icon[state="fehler"] {
+			background-position: 100% 0%;
+		}
+		#tor2 {
+			transform: scaleX(-1);
+		}
+
+		.garage_button:focus {
+			outline: none;
+		}
+		.garage_button {
+			height: 40px;
+			width: 20px;
+			cursor: pointer;
+			vertical-align: middle;
+			margin-top: 10px;
+			
+			background-image: url(img/arrow_vertical_sprite.png);
+			background-position: 100% 0%;
+			background-size: cover;
+		}
+		.garage_button:active {
+			background-position: 50% 0%;
+		}
+		.garageOpen1 {
+			float: left;
+			margin-left: 45px;
+		}
+		.garageOpen2 {
+			float: right;
+			margin-right: 45px;
+		}
+		.g_attribute {
+			display: none;
+		}
+		
+		@media (min-width: 1000px) {
+			#garage_container {
+				margin-top: 10px;
+			}
+			.garage_icon {
+				width: 140px;
+				height: 140px;
+			}
+			.garage_button {
+				height: 80px;
+				width: 40px;
+				margin-top: 30px;
+			}
+			.garageOpen1 {
+				float: left;
+				margin-left: 90px;
+			}
+			.garageOpen2 {
+				float: right;
+				margin-right: 90px;
+			}
+		}
+	</style>
+</div>
+

@@ -1,0 +1,28 @@
+<div class="device_section">
+	<div class="section_header">
+		<a class="device_title" field="customName">Windmesser</a>
+	</div>
+	<div class="section_main">
+		<a>Wind: </a><a class="display" id="windKmh">---</a><a> kmh</a>
+		<br>
+		<a class="secondInfo" field="wind" id="wind">---</a><a class="secondInfo"> U/10 Min.</a>
+		<br>
+		<a>Böen: </a><a class="display" id="windMaxKmh">---</a><a> kmh</a>
+		<br>
+		<a class="secondInfo" field="maxWind" id="maxWind">---</a><a class="secondInfo"> ms/U</a>
+	</div>
+	<div class="section_footer">
+		<div class="section_footer_value"><a field="lastAnswer" class="time">--:--</a></div>
+		<div class="section_footer_value"><a field="ip"  class="ipField">---.---.---.--</a></div>
+	</div>
+	
+	<style>
+		.display {
+			font-size: 30px;
+		}
+		.secondInfo {
+			color: gray;
+			font-weight: 300;
+		}
+	</style>
+</div>
