@@ -1,6 +1,6 @@
 //User Valriables
 //const SERVER_IP = 'ws://192.168.178.57:8080';
-const HOST_NAME = location.hostname;
+const HOST_NAME = "192.168.178.57";
 const PORT = 8080;
 
 
