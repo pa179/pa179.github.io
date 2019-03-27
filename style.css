@@ -1,0 +1,298 @@
+@font-face { 
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 300;
+    src: url('style/Roboto-Light.ttf') format('truetype'); 
+}
+@font-face { 
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+    src: url('style/Roboto-Medium.ttf') format('truetype'); 
+}
+a, p, b, h1 {
+	font-family: 'Roboto', sans-serif;
+}
+a, p {
+	font-weight: 300;
+}
+h1, b {
+	font-weight: 400;
+}
+
+
+
+body {
+	background-color: #FBFBFB;
+	display: block;
+	text-align: -webkit-center;
+	user-select: none;
+}
+
+#mainPage {
+	transition-duration: 0.5s;
+}
+.blurred {
+	opacity: 0.1;
+}
+
+/*Header*/
+#pageHeader {
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #FFFFFF;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-shadow: 0px 2px 10px #CCCCCC;
+	display: table;
+}
+.headline {
+	font-size: 30px;
+	float: left;
+	margin-left: 20px;
+	color: gray;
+	font-weight: 400;
+}
+#btnConnect {
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+	width: 90px;
+	cursor: pointer;
+}
+#btnConnect .statusLight {
+	display: inline-block;
+}
+#btnConnect a {
+	font-size: 15px;
+	color: gray;
+}
+
+#btnSettings {
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+	width: 40px;
+	cursor: pointer;
+}
+#btnSettings img {
+	width: 10px;
+	height: 20px;
+	display: inline-block;
+}
+
+
+
+
+
+.statusLight {
+	width: 10px;
+	height: 10px;
+	background-color: #FF0000;
+	border-radius: 5px;
+}
+.slDefaultOn {
+	background-color: #11b300;
+}
+
+
+/*-------main-------*/
+#grid {
+	width: 100%;
+	display: inline-grid;
+	grid-auto-flow: row;
+	grid-template-columns: repeat(auto-fill, 180px);
+	justify-content: center;
+	margin-top: 50px;
+	grid-column-gap: 10px;
+}
+
+.device_section {
+	background-color: #FFFFFF;
+	/*display: block;*/
+	display: flex;
+	text-align: -webkit-center;
+	width: 180px;
+	height: 180px;
+	box-shadow: 2px 2px 10px #CCCCCC;
+	display: inline-block;
+	margin: 5px;
+	margin-left: 0;
+}
+.dsCube {
+	perspective: 800px;
+	box-shadow: none;
+	background-color: transparent;
+}
+.offline {
+	opacity: 0.5;
+	pointer-events: none;
+	cursor: not-allowed;
+	box-shadow: 2px 2px 3px #DDDDDD;
+}
+.update .ipField {
+	color: #1c82ff;
+	font-weight: bold;
+}
+/*cube view*/
+.section_cube {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 0.5s;
+	transform: translateZ(-90px); 
+}
+.cube_face {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	box-shadow: 2px 2px 10px #CCCCCC;
+	background-color: #FFFFFF;
+	backface-visibility: hidden;
+}
+.cfFront {
+	transform: rotateY(0deg) translateZ(90px);
+}
+.cfRight {
+	transform: rotateY(90deg) translateZ(90px); 
+}
+.section_cube.show-front  { 
+	transform: translateZ(-90px) rotateY(0deg); 
+}
+.section_cube.show-right  { 
+	transform: translateZ(-90px) rotateY(-90deg); 
+}
+
+
+/*section content*/
+.device_title {
+	font-weight: bold;
+	font-size: 20px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	color: #1c82ff;
+}
+
+.section_header {
+	height: 30px;
+}
+
+.section_main {
+	height: 130px;
+	padding-top: 10px;
+	box-sizing: border-box; 
+}
+
+.section_footer {
+	height: 20px;
+	/*display: block;
+	text-align: -webkit-center;*/
+}
+.section_footer_value {
+	margin-left: 5px;
+	margin-right: 5px;
+	display: inline;
+}
+.section_footer a {
+	font-size: 10px;
+	font-weight: 200;
+	color: lightgray;
+}
+
+
+
+/*----------Einstellungen---------*/
+
+#settingsHeader {
+	top: 0;
+	width: 100%;
+}
+#settingsHeader a {
+	font-size: 25px;
+	font-weight: 400;
+}
+#closeSettings {
+	width: 24px;
+	height: 24px;
+	float: right;
+	background-color: red;
+	padding: 3px;
+	opacity: 0.7;
+	cursor: pointer;
+}
+#closeSettings:hover {
+	opacity: 0.5;
+}
+#settingsBody {
+	padding: 20px;
+}
+#settingsWindow {
+	position: absolute;
+	/*transform: translateX(-50%);
+	left: 50%;*/
+	width: 330px;
+	left: 0; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto; 
+	top: 10%;
+	background-color: white;
+	border: 1px black solid;
+	display: none;
+	box-shadow: 5px 5px 10px lightgray;
+}
+
+.setOffline {
+	color: gray;
+}
+.setOffline .statusLight {
+	background-color: #FF0000;
+}
+
+.setCustomName {
+	width: 110px;
+}
+
+#settingsDescription {
+	text-align: left;
+}
+
+
+
+/*Grosse Geraete*/
+@media (min-width: 1000px) {
+	#grid {
+		/*width: 800px;*/
+		grid-column-gap: 5px;
+	}
+	.device_section {
+		width: 360px;
+		height: 360px;
+		grid-column: span 2;
+	}
+	.section_main {
+		height: 310px;
+	}	
+	
+	
+	/*??????????????*/
+	.section_cube {
+		transform: translateZ(-180px); 
+	}
+	.cfFront {
+		transform: rotateY(0deg) translateZ(180px);
+	}
+	.cfRight {
+		transform: rotateY(90deg) translateZ(180px); 
+	}
+	.section_cube.show-front  { 
+		transform: translateZ(-180px) rotateY(0deg); 
+	}
+	.section_cube.show-right  { 
+		transform: translateZ(-180px) rotateY(-90deg); 
+	}
+}
