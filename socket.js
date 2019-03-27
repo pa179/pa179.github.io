@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /** Create new socket connection */
 function connectSocket() {
-	connection = new WebSocket("ws://" + HOST_NAME + ":" + PORT);
+	connection = new WebSocket("wss://" + HOST_NAME + ":" + PORT);
 	connection.onopen = wsOpened;
 	connection.onerror = wsError;
 	connection.onclose = wsClosed;
