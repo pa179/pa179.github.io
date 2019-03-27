@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>Haussteuerung</title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta charset="utf-8">
+		<link rel="manifest" href="manifest.json">
+		<!--<link rel="shortcut icon" href="favicon.ico">-->
+		<link rel="shortcut icon" href="img/icon-128x128.png">
+		
+		<script src="jquery-3.3.1.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	
+	<body>
+		<div id="mainPage">
+			<div id="pageHeader">
+				<a class="headline">Haussteuerung</a>
+			
+				<div id="btnConnect">
+					<div class="statusLight"></div>
+					<a class="btnText">Verbinde...</a>
+				</div>
+				
+				<div id="btnSettings">
+					<img src="img/settings.png" />
+				</div>
+			</div>
+			<div id="grid">
+				<!-- Device Sections inserted here! -->
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		<!--Popup Window-->
+		
+		<div id="settingsWindow">
+			<div id="settingsHeader">
+				<a>Einstellungen</a>
+				<img id="closeSettings" src="img/cross.png" />
+			</div>
+			<div id="settingsBody">
+				<table>
+					<thead>
+						<tr>
+							<th><a></a></th>
+							<th><a>Geräte ID</a></th>
+							<th><a>Eigener Name</a></th>
+						</tr>
+					</thead>
+					<tbody id="setDeviceList">
+					<!-- Devices inserted here! -->
+					</tbody>
+				</table>
+				<div id="settingsDescription">
+					<p><b>Update Mode:</b> IP-Adresse 5 Sekunden<br>festhalten um Update Mode zu aktivieren.<br>(Nur PC)</p>
+				</div>
+			</div>
+		</div>
+	
+		<script src="Moment.js"></script>
+		<script src="Chart.min.js"></script>
+		<script src="socket.js"></script>
+		<script src="functions.js"></script>
+	</body>
+</html>
