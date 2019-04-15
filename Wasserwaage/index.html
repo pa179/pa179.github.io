@@ -28,9 +28,9 @@
 			
 			if (window.DeviceOrientationEvent) {
 				window.addEventListener("devicemotion", function(event) {
-					var x = event.accelerationIncludingGravity.x.toFixed(2);
-					var y = event.accelerationIncludingGravity.y.toFixed(2);
-					var z = event.accelerationIncludingGravity.z.toFixed(2);
+					var x = event.accelerationIncludingGravity.x.toFixed(1);
+					var y = event.accelerationIncludingGravity.y.toFixed(1);
+					var z = event.accelerationIncludingGravity.z.toFixed(1);
 					document.getElementById("z").innerHTML = z;
 					document.getElementById("x").innerHTML = (Math.atan(x/z)*180/Math.PI).toFixed(1) + "°";
 					document.getElementById("y").innerHTML = (Math.atan(y/z)*180/Math.PI).toFixed(1) + "°";
