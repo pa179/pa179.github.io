@@ -2,7 +2,9 @@
 	<head>
 		<title>Wasserwaage</title>
 	</head>
-	<body>		
+	<body>
+		<a id="doeSupported">Not supproted!</a><br><br>
+		
 		<a id="x">-</a><br>
 		<a id="y">-</a><br>
 		<a id="z">-</a><br>
@@ -11,12 +13,13 @@
 		
 			if (window.DeviceOrientationEvent) {
 				window.addEventListener('orientationchange', deviceOrientationHandler, false);
+				document.getElementById("doeSupported").innerHTML = "Supported!";
 			}
 			
 			function deviceOrientationHandler(event) {
-				document.getElementById("z").innerHTML = event.alpha;
-				document.getElementById("x").innerHTML = event.beta;
-				document.getElementById("y").innerHTML = event.gamma;
+				document.getElementById("x").innerHTML = event.alpha;
+				document.getElementById("y").innerHTML = event.beta;
+				document.getElementById("z").innerHTML = event.gamma;
 			}
 		</script>
 	</body>
