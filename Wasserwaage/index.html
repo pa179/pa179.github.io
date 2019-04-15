@@ -28,10 +28,23 @@
 			}
 			
 			function setBall(x, y) {
+				var radius = 25;
 				var ball = document.getElementById("circle")
 				
-				ball.style.left = screen.width/2 + Math.sqrt(x)*20;
-				ball.style.top = screen.height/2 + Math.sqrt(y)*20;
+				var xCoord = screen.width/2 + x*50;
+				var yCoord = screen.height/2 + y*50;
+				
+				if (xCoord < radius)
+					xCoord = radius;
+				if (xCoord > screen.width-radius)
+					xCoord = screen.width-radius;
+				if (yCoord < radius)
+					yCoord = radius;
+				if (yCoord > screen.height-radius)
+					yCoord = screen.height-radius;
+				
+				ball.style.left = xCoord;
+				ball.style.top = yCoord;
 				
 			}
 		</script>
