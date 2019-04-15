@@ -12,7 +12,7 @@
 		<script>
 		
 			if (window.DeviceOrientationEvent) {
-				window.addEventListener('deviceorientation', deviceOrientationHandler, false);
+				window.addEventListener('orientationchange', deviceOrientationHandler, false);
 				document.getElementById("doeSupported").innerHTML = "Supported!";
 			}
 			
