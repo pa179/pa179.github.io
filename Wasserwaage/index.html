@@ -12,10 +12,9 @@
 		<div id="circle" style="width: 50px; height: 50px; border-radius: 25px; background-color: blue; position: relative; left: 100px; top: 200px;"></div>
 		
 		<script>
-			window.addEventListener('devicemotion', deviceMotionHandler);
+			window.addEventListener('orientationchange', deviceMotionHandler);
 			
 			function deviceMotionHandler(event) { 
-				console.log("event");
 				document.getElementById("z").innerHTML = event.acceleration.z;
 				document.getElementById("x").innerHTML = event.acceleration.x;
 				document.getElementById("y").innerHTML = event.acceleration.y;
