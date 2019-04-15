@@ -23,9 +23,16 @@
 					document.getElementById("x").innerHTML = x;
 					document.getElementById("y").innerHTML = y;
 					
-					document.getElementById("circle").style.left = screen.width/2 + x*100;
-					document.getElementById("circle").style.top = screen.height/2 + y*100;
+					setBall(x, y);
 				}, true);
+			}
+			
+			function setBall(x, y) {
+				var ball = document.getElementById("circle")
+				
+				ball.style.left = screen.width/2 + Math.sqrt(x)*20;
+				ball.style.top = screen.height/2 + Math.sqrt(y)*20;
+				
 			}
 		</script>
 	</body>
