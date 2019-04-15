@@ -17,9 +17,7 @@
 		<div id="circle" style="width: 50px; height: 50px; border-radius: 25px; background-color: blue; position: relative; left: 100px; top: 200px;"></div>
 		
 		<script>
-			window.addEventListener('devicemotion', deviceMotionHandler);
-			
-			function deviceMotionHandler(event) { 
+			window.addEventListener('deviceorientation', function (event) { 
 				document.getElementById("z").innerHTML = event.acceleration.z;
 				document.getElementById("x").innerHTML = event.acceleration.x;
 				document.getElementById("y").innerHTML = event.acceleration.y;
@@ -27,7 +25,7 @@
 				document.getElementById("z2").innerHTML = event.alpha;
 				document.getElementById("x2").innerHTML = event.beta;
 				document.getElementById("y2").innerHTML = event.gamma;
-			}
+			}, true);
 			/*if (window.DeviceOrientationEvent) {
 				window.addEventListener('orientationchange', function (event) {
 
