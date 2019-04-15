@@ -5,32 +5,55 @@
 		<title>Wasserwaage</title>
 		
 		<style>
-			@media screen and (orientation: landscape) {
-			  html {
-				transform: rotate(-90deg);
-				transform-origin: left top;
-				width: 100vh;
-				overflow-x: hidden;
-				position: absolute;
-				top: 100%;
-				left: 0;
-			  }
+			body {
+				background-color: #f2de0a;
+			}
+			#circle {
+				width: 50px; 
+				height: 50px; 
+				border-radius: 25px; 
+				position: absolute; 
+				border: 1px rgba(150, 150, 150, 0.5) solid;
+				
+				background-color: rgba(245, 245, 245, 0.5); 
+			}
+			#mirrorEffect {
+				width: 20px; 
+				height: 20px; 
+				border-radius: 10px;
+				position: relative;				
+				top: 10px;
+				left: 10px;
+				
+				background-color: rgba(245, 245, 245, 0.5); 
+			}
+			#marker1 {
+				width: 50px; 
+				height: 50px; 
+				border-radius: 25px; 
+				position: absolute; 
+				border: 1px black solid;
+			}
+			#marker2 {
+				width: 150px; 
+				height: 150px; 
+				border-radius: 75px;
+				position: absolute; 
+				border: 1px black solid;
 			}
 		</style>
 	</head>
 	<body>
 		<a id="x">-</a><br>
 		<a id="y">-</a><br>
-		<a id="z">-</a><br>
+		<a id="z">-</a><br>		
 		
-		<a id="bx">-</a><br>
-		<a id="by">-</a><br>
+		<div id="circle">
+			<div id="mirrorEffect"></div>
+		</div>
 		
-		
-		<div id="circle" style="width: 50px; height: 50px; border-radius: 25px; background-color: blue; position: absolute; border: 1px transparent solid;"></div>
-		
-		<div id="marker1" style="width: 50px; height: 50px; border-radius: 25px; position: absolute; border: 1px black solid;"></div>
-		<div id="marker2" style="width: 150px; height: 150px; border-radius: 75px; position: absolute; border: 1px black solid;"></div>
+		<div id="marker1"></div>
+		<div id="marker2"></div>
 		
 		<script>
 			var radius = 25;
@@ -57,7 +80,8 @@
 			}
 			
 			function setBall(x, y) {
-				var ball = document.getElementById("circle")
+				var ball = document.getElementById("circle");
+				var effect = document.getElementById("mirrorEffect");
 				
 				var xCoord = screen.width/2 - radius + x*50;
 				var yCoord = screen.height/2 - radius + y*50;
@@ -70,13 +94,11 @@
 					yCoord = 0;
 				if (yCoord > screen.height-2*radius)
 					yCoord = screen.height-2*radius;
-					
-				document.getElementById("bx").innerHTML = xCoord;
-				document.getElementById("by").innerHTML = yCoord;
-				
 				
 				ball.style.left = xCoord;
 				ball.style.top = yCoord;
+				effect.style.left = 5 + (2*radius + 10)/screen.width * xCoord;
+				effect.style.top = 5 + (2*radius + 10)/screen.height * yCoord;
 				
 			}
 		</script>
