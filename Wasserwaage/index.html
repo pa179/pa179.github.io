@@ -32,8 +32,8 @@
 					var y = event.accelerationIncludingGravity.y.toFixed(2);
 					var z = event.accelerationIncludingGravity.z.toFixed(2);
 					document.getElementById("z").innerHTML = z;
-					document.getElementById("x").innerHTML = Math.atan(x/z) + "°";
-					document.getElementById("y").innerHTML = Math.atan(y/z) + "°";
+					document.getElementById("x").innerHTML = (Math.atan(x/z)*180/Math.PI).toFixed(1) + "°";
+					document.getElementById("y").innerHTML = (Math.atan(y/z)*180/Math.PI).toFixed(1) + "°";
 					
 					setBall(x, y);
 				}, true);
