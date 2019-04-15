@@ -13,21 +13,20 @@
 		<div id="circle" style="width: 50px; height: 50px; border-radius: 25px; background-color: blue; position: relative; left: 100px; top: 200px;"></div>
 		
 		<script>
+			screen.orientation.lock('landscape');
+			
 			if (window.DeviceOrientationEvent) {
 				window.addEventListener("devicemotion", function(event) {
+					var x = event.accelerationIncludingGravity.x;
+					var y = event.accelerationIncludingGravity.y;
 					document.getElementById("z").innerHTML = event.accelerationIncludingGravity.z;
-					document.getElementById("x").innerHTML = event.accelerationIncludingGravity.x;
-					document.getElementById("y").innerHTML = event.accelerationIncludingGravity.y;
+					document.getElementById("x").innerHTML = x;
+					document.getElementById("y").innerHTML = y;
+					
+					document.getElementById("circle").style.left = screen.width/2 + x*100;
+					document.getElementById("circle").style.top = screen.height/2 + y*100;
 				}, true);
 			}
-			/*if (window.DeviceOrientationEvent) {
-				window.addEventListener('orientationchange', function (event) {
-
-					
-					//document.getElementById("circle").style.left = screen.width/2 + x;
-					//document.getElementById("circle").style.top = screen.height/2 + y;
-				});
-			}*/
 		</script>
 	</body>
 </html>
