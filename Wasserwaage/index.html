@@ -10,10 +10,17 @@
 		<a id="z">-</a><br>
 		
 		
-		<div id="circle" style="width: 50px; height: 50px; border-radius: 25px; background-color: blue; position: relative; left: 100px; top: 200px;"></div>
+		<div id="circle" style="width: 50px; height: 50px; border-radius: 25px; background-color: blue; position: absolute; border: 1px transparent solid;"></div>
+		
+		<div id="marker1" style="width: 50px; height: 50px; border-radius: 25px; position: absolute; border: 1px black solid;"></div>
 		
 		<script>
-			screen.orientation.lock('landscape');
+			var radius = 25;
+			
+			document.getElementById("marker1").style.left = screen.width/2 - radius;
+			document.getElementById("marker1").style.top = screen.height/2 - radius;
+			console.log(screen.width);
+			
 			
 			if (window.DeviceOrientationEvent) {
 				window.addEventListener("devicemotion", function(event) {
@@ -28,7 +35,7 @@
 			}
 			
 			function setBall(x, y) {
-				var radius = 25;
+
 				var ball = document.getElementById("circle")
 				
 				var xCoord = screen.width/2 - radius + x*50;
