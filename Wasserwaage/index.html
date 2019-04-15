@@ -31,8 +31,8 @@
 				var radius = 25;
 				var ball = document.getElementById("circle")
 				
-				var xCoord = screen.width/2 + x*50;
-				var yCoord = screen.height/2 + y*50;
+				var xCoord = screen.width/2 - radius + x*50;
+				var yCoord = screen.height/2 - radius + y*50;
 				
 				if (xCoord < radius)
 					xCoord = radius;
