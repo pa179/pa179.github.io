@@ -30,9 +30,10 @@
 				window.addEventListener("devicemotion", function(event) {
 					var x = event.accelerationIncludingGravity.x.toFixed(2);
 					var y = event.accelerationIncludingGravity.y.toFixed(2);
-					document.getElementById("z").innerHTML = event.accelerationIncludingGravity.z.toFixed(2);
-					document.getElementById("x").innerHTML = x;
-					document.getElementById("y").innerHTML = y;
+					var z = event.accelerationIncludingGravity.z.toFixed(2);
+					document.getElementById("z").innerHTML = z;
+					document.getElementById("x").innerHTML = Math.tan(x/z);
+					document.getElementById("y").innerHTML = Math.tan(y/z);
 					
 					setBall(x, y);
 				}, true);
