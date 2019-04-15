@@ -99,6 +99,11 @@
 					yCoord = lastY + ballSpeed;
 				if (yCoord-lastY < -ballSpeed)
 					yCoord = lastY - ballSpeed;*/
+				if (abs(xCoord-lastX)<2)
+					xCoord = lastX;
+				if (abs(yCoord-lastY)<2)
+					yCoord = lastY;
+					
 				
 				if (xCoord < 0)
 					xCoord = 0;
