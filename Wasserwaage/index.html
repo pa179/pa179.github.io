@@ -57,6 +57,9 @@
 		
 		<script>
 			var radius = 25;
+			
+			var lastX = screen.width/2 - radius;
+			var lastY = screen.height/2 - radius;
 			window.onload = function () {			
 				document.getElementById("marker1").style.left = screen.width/2 - 25;
 				document.getElementById("marker1").style.top = screen.height/2 - 25;
@@ -76,6 +79,7 @@
 					document.getElementById("y").innerHTML = (Math.atan(y/z)*180/Math.PI).toFixed(1) + "°";
 					
 					setBall(x, y);
+					
 				}, true);
 			}
 			
@@ -85,6 +89,15 @@
 				
 				var xCoord = screen.width/2 - radius + x*50;
 				var yCoord = screen.height/2 - radius + y*50;
+				
+				if (xCoord-lastX > 10)
+					xCoord = lastX + 10;
+				if (xCoord-lastX < -10)
+					xCoord = lastX - 10;	
+				if (yCoord-lastY > 10)
+					yCoord = lastY + 10;
+				if (yCoord-lastY < -10)
+					yCoord = lastY - 10;
 				
 				if (xCoord < 0)
 					xCoord = 0;
@@ -97,9 +110,11 @@
 				
 				ball.style.left = xCoord;
 				ball.style.top = yCoord;
-				effect.style.left = 5 + (2*radius - 30)/screen.width * xCoord;
-				effect.style.top = 5 + (2*radius - 30)/screen.height * yCoord;
+				effect.style.left = 2*radius - (5 + (2*radius - 30)/screen.width * xCoord);
+				effect.style.top = 2*radius - (5 + (2*radius - 30)/screen.height * yCoord);
 				
+				lastX = xCoord;
+				lastY = yCoord;
 			}
 		</script>
 	</body>
