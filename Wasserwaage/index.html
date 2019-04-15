@@ -9,6 +9,9 @@
 		<a id="y">-</a><br>
 		<a id="z">-</a><br>
 		
+		<a id="bx">-</a><br>
+		<a id="by">-</a><br>
+		
 		
 		<div id="circle" style="width: 50px; height: 50px; border-radius: 25px; background-color: blue; position: absolute; border: 1px transparent solid;"></div>
 		
@@ -53,6 +56,10 @@
 					yCoord = radius;
 				if (yCoord > screen.height-radius)
 					yCoord = screen.height-radius;
+					
+				document.getElementById("bx").innerHTML = xCoord;
+				document.getElementById("by").innerHTML = yCoord;
+				
 				
 				ball.style.left = xCoord;
 				ball.style.top = yCoord;
