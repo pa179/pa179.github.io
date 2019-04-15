@@ -48,14 +48,14 @@
 				var xCoord = screen.width/2 - radius + x*50;
 				var yCoord = screen.height/2 - radius + y*50;
 				
-				if (xCoord < radius)
-					xCoord = radius;
-				if (xCoord > screen.width-radius)
-					xCoord = screen.width-radius;
-				if (yCoord < radius)
-					yCoord = radius;
-				if (yCoord > screen.height-radius)
-					yCoord = screen.height-radius;
+				if (xCoord < 0)
+					xCoord = 0;
+				if (xCoord > screen.width-2*radius)
+					xCoord = screen.width-2*radius;
+				if (yCoord < 0)
+					yCoord = 0;
+				if (yCoord > screen.height-2*radius)
+					yCoord = screen.height-2*radius;
 					
 				document.getElementById("bx").innerHTML = xCoord;
 				document.getElementById("by").innerHTML = yCoord;
