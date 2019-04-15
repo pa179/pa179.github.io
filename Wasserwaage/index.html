@@ -9,8 +9,6 @@
 		<a id="y">-</a><br>
 		<a id="z">-</a><br>
 		
-		<div id="circle" style="width: 50px; height: 50px; border-radius: 25px; background-color: blue; position: relative; left: 100px; top: 200px;"></div>
-		
 		<script>
 		
 			if (window.DeviceOrientationEvent) {
@@ -24,9 +22,6 @@
 				document.getElementById("z").innerHTML = event.alpha;
 				document.getElementById("x").innerHTML = x;
 				document.getElementById("y").innerHTML = y;
-				
-				document.getElementById("circle").style.left = screen.width/2 + x;
-				document.getElementById("circle").style.top = screen.height/2 + y;
 			}
 		</script>
 	</body>
