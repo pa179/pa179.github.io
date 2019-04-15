@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Wasserwaage</title>
+	</head>
+	<body>
+		<a id="doeSupported">Not supproted!</a><br><br>
+		
+		<a id="x">-</a><br>
+		<a id="y">-</a><br>
+		<a id="z">-</a><br>
+		
+		<script>
+		
+			if (window.DeviceOrientationEvent) {
+				window.addEventListener('deviceorientation', deviceOrientationHandler, false);
+				document.getElementById("doeSupported").innerHTML = "Supported!";
+			}
+			
+			function deviceOrientationHandler(event) {
+				document.getElementById("x").innerHTML = event.acceleration.x;
+				document.getElementById("y").innerHTML = event.acceleration.y;
+				document.getElementById("z").innerHTML = event.acceleration.z;
+			}
+		</script>
+	</body>
+</html>
