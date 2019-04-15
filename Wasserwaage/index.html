@@ -7,11 +7,7 @@
 	<body>
 		<a id="x">-</a><br>
 		<a id="y">-</a><br>
-		<a id="z">-</a><br><br>
-		
-		<a id="x2">-</a><br>
-		<a id="y2">-</a><br>
-		<a id="z2">-</a><br>
+		<a id="z">-</a><br>
 		
 		
 		<div id="circle" style="width: 50px; height: 50px; border-radius: 25px; background-color: blue; position: relative; left: 100px; top: 200px;"></div>
@@ -19,13 +15,9 @@
 		<script>
 			if (window.DeviceOrientationEvent) {
 				window.addEventListener("devicemotion", function(event) {
-					document.getElementById("z").innerHTML = event.acceleration.z;
-					document.getElementById("x").innerHTML = event.acceleration.x;
-					document.getElementById("y").innerHTML = event.acceleration.y;
-					
-					document.getElementById("z2").innerHTML = event.alpha;
-					document.getElementById("x2").innerHTML = event.beta;
-					document.getElementById("y2").innerHTML = event.gamma;
+					document.getElementById("z").innerHTML = event.accelerationIncludingGravity.z;
+					document.getElementById("x").innerHTML = event.accelerationIncludingGravity.x;
+					document.getElementById("y").innerHTML = event.accelerationIncludingGravity.y;
 				}, true);
 			}
 			/*if (window.DeviceOrientationEvent) {
