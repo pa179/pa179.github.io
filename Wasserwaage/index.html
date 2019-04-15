@@ -57,6 +57,7 @@
 		
 		<script>
 			var radius = 25;
+			var ballSpeed = 5;
 			
 			var lastX = screen.width/2 - radius;
 			var lastY = screen.height/2 - radius;
@@ -90,14 +91,14 @@
 				var xCoord = screen.width/2 - radius + x*50;
 				var yCoord = screen.height/2 - radius + y*50;
 				
-				if (xCoord-lastX > 10)
-					xCoord = lastX + 10;
-				if (xCoord-lastX < -10)
-					xCoord = lastX - 10;	
-				if (yCoord-lastY > 10)
-					yCoord = lastY + 10;
-				if (yCoord-lastY < -10)
-					yCoord = lastY - 10;
+				if (xCoord-lastX > ballSpeed)
+					xCoord = lastX + ballSpeed;
+				if (xCoord-lastX < -ballSpeed)
+					xCoord = lastX - ballSpeed;	
+				if (yCoord-lastY > ballSpeed)
+					yCoord = lastY + ballSpeed;
+				if (yCoord-lastY < -ballSpeed)
+					yCoord = lastY - ballSpeed;
 				
 				if (xCoord < 0)
 					xCoord = 0;
@@ -110,8 +111,8 @@
 				
 				ball.style.left = xCoord;
 				ball.style.top = yCoord;
-				effect.style.left = 2*radius - (5 + (2*radius - 30)/screen.width * xCoord);
-				effect.style.top = 2*radius - (5 + (2*radius - 30)/screen.height * yCoord);
+				effect.style.left = 20 - (2*radius - 30)/screen.width * xCoord;
+				effect.style.top = 20 - (2*radius - 30)/screen.height * yCoord;
 				
 				lastX = xCoord;
 				lastY = yCoord;
