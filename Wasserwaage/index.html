@@ -18,7 +18,7 @@
 		
 		<script>
 			if (window.DeviceOrientationEvent) {
-				window.addEventListener("deviceorientation", function(event) {
+				window.addEventListener("devicemotion", function(event) {
 					document.getElementById("z").innerHTML = event.acceleration.z;
 					document.getElementById("x").innerHTML = event.acceleration.x;
 					document.getElementById("y").innerHTML = event.acceleration.y;
