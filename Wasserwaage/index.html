@@ -3,24 +3,27 @@
 		<title>Wasserwaage</title>
 	</head>
 	<body>
-		<a id="doeSupported">Not supproted!</a><br><br>
-		
 		<a id="x">-</a><br>
 		<a id="y">-</a><br>
 		<a id="z">-</a><br>
 		
-		<script>
+		<div id="circle" style="width: 50px; height: 50px; border-radius: 25px; background-color: blue; position: relative; left: 100px; top: 200px;"></div>
 		
-			if (window.DeviceOrientationEvent) {
-				window.addEventListener('orientationchange', deviceOrientationHandler, false);
-				document.getElementById("doeSupported").innerHTML = "Supported!";
-			}
-			
-			function deviceOrientationHandler(event) {
-				document.getElementById("x").innerHTML = event.alpha;
-				document.getElementById("y").innerHTML = event.beta;
-				document.getElementById("z").innerHTML = event.gamma;
-			}
+		<script>
+			window.onorientationchange = function(event) { 
+				console.log("event");
+				document.getElementById("z").innerHTML = event.alpha;
+				document.getElementById("x").innerHTML = event.beta;
+				document.getElementById("y").innerHTML = event.gamma;
+			};
+			/*if (window.DeviceOrientationEvent) {
+				window.addEventListener('orientationchange', function (event) {
+
+					
+					//document.getElementById("circle").style.left = screen.width/2 + x;
+					//document.getElementById("circle").style.top = screen.height/2 + y;
+				});
+			}*/
 		</script>
 	</body>
 </html>
