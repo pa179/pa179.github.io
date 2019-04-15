@@ -17,7 +17,7 @@
 			function deviceMotionHandler(event) { 
 				console.log("event");
 				document.getElementById("z").innerHTML = "test";
-				document.getElementById("x").innerHTML = event.beta;
+				document.getElementById("x").innerHTML = event.acceleration.x;
 				document.getElementById("y").innerHTML = event.gamma;
 			}
 			/*if (window.DeviceOrientationEvent) {
